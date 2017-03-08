@@ -1,0 +1,16 @@
+.input {
+    margin-top: 20px;
+}
+
+.jumbotron {
+    background-color: white;
+}
+
+.bg-info {
+    background-color: orange;
+}
+
+main {
+    padding: 10%;
+    background-image: linear-gradient(180deg, orange, red);
+}
