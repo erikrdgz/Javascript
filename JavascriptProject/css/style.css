@@ -1,9 +1,14 @@
+* {
+    margin: 0px;
+}
+
 .input {
     margin-top: 20px;
 }
 
 .jumbotron {
     background-color: white;
+    height: 200px
 }
 
 .bg-info {
@@ -11,6 +16,15 @@
 }
 
 main {
-    padding: 10%;
+    padding: 0px 10px 100px 10px;
     background-image: linear-gradient(180deg, orange, red);
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid red;
+    margin: 1em 0;
+    padding: 0;
 }

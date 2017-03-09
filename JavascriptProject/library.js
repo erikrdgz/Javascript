@@ -24,22 +24,24 @@ library.prototype.addBook = function (book) {
 };
 
 library.prototype.removeBookByTitle = function (title) {
+    var bool = false;
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (this.myBookArray[i].title == title) {
             this.myBookArray.splice(i, 1);
-            return true;
+            bool = true;
         }
     };
-    return false; //a loop
+    return bool; //a loop
 };
 library.prototype.removeBookByAuthor = function (author) {
+    var bool = false;
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (this.myBookArray[i].author == author) {
             this.myBookArray.splice(i, 1);
-            return true;
+            bool = true;
         }
     };
-    return false;
+    return bool;
     //loop
 };
 library.prototype.getRandomBook = function () {
@@ -69,14 +71,14 @@ library.prototype.getBooksByAuthor = function (author) {
     return arr1; //
 };
 library.prototype.addBooks = function (arr) {
+    var num = 0;
     for (var i = 0; i < arr.length; i++) {
-        this.myBookArray.push(arr[i]);
+        if (this.addBook(arr[i])) {
+            num++;
+        }
+
     }
-    if (arr.length !== 0) {
-        return arr.length;
-    } else if (arr.length === 0) {
-        return 0;
-    }
+    return num;
 };
 library.prototype.getAuthors = function () {
     var authors = new Array();
