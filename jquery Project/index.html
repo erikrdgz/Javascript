@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="jquery-3.1.1.min.js"></script>
+
+    <title>Library App</title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <div class="row text-center bg-info">
+            <h1>JavaScript Library</h1>
+        </div>
+    </header>
+    <div class="container-fluid bg-info">
+        <div class="row text-center">
+            <div class="col-xs-3">
+                <p></p>
+            </div>
+            <div class="col-xs-6 jumbotron">
+                <p id="display">Display</p>
+            </div>
+            <div class="col-xs-3">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="input">
+                    <input type="text" name="firstname" class="input" placeholder="Title">
+                    <input type="text" name="firstname" class="input" placeholder="Author">
+                    <input type="text" name="firstname" class="input" placeholder="Pages">
+                    <input type="text" name="firstname" class="input" placeholder="Publish Year">
+                    <button type="submit" id="addBook">Add</button>
+                </div>
+                <hr>
+                <div class="col-sm-4 input">
+                    <input type="text" name="firstname" placeholder="Remove By title">
+                    <button type="button" id="removeTitle">Remove</button>
+                </div>
+                <div class="col-sm-4 input">
+                    <input type="text" name="firstname" placeholder="Remove By Author">
+                    <button type="button" id="removeAuthor">Remove</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 input">
+                    <input type="text" name="firstname" placeholder="Get Random Book">
+                    <button type="button" id="getRandomBook">Get</button>
+                </div>
+                <div class="col-sm-4 input">
+                    <input type="text" name="firstname" placeholder="Get Book By Title">
+                    <button type="button" id="getByTitle">Get</button>
+                </div>
+                <div class="col-sm-4 input">
+                    <input type="text" name="firstname" placeholder="Get Books By Author">
+                    <button type="button" id="getByAuthor">Get</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 input">
+                    <input type="text" name="firstname" placeholder="Add Books">
+                    <button type="button" id="addBooks">Add</button>
+                </div>
+                <div class="col-sm-4 input">
+                    <input type="text" name="firstname" placeholder="Get Authors">
+                    <button type="button" id="getAuthors">Get</button>
+                </div>
+                <div class="col-sm-4 input">
+                    <input type="text" name="firstname" placeholder="Get Random Author Name">
+                    <button type="button" id="getRandomAuthor">Get</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="jqueryLib.js"></script>
+</body>
+
+</html>
