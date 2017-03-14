@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <script src="jquery-3.1.1.min.js"></script>
 
     <title>Library App</title>
@@ -12,7 +13,7 @@
 
 <body>
     <header class="container-fluid">
-        <div class="row text-center bg-info">
+        <div class="row text-center bg-info header">
             <h1>JavaScript Library</h1>
         </div>
     </header>
@@ -30,7 +31,7 @@
         <div class="row text-center">
             <div class="col-xs-7 jumbotron">
                 <!-- Library Jumbo -->
-                <ul>
+                <ul class="list-group">
                 </ul>
             </div>
             <div class="col-xs-1">
@@ -38,7 +39,7 @@
             </div>
             <div class="col-xs-4 well-lg">
                 <!-- Results well -->
-                <ul>
+                <ul class="list-group">
 
                 </ul>
             </div>
@@ -60,17 +61,17 @@
                     <h3>Add Books to Library</h3>
                     <ul class="list-group">
                     </ul>
-                    <button type="button" id="addBooks">Drop Down</button>
-                    <button type="button" id="addBooksBtn">Add Book</button>
+                    <button type="button" id="addBooks" class="btn-primary">Drop Down</button>
+                    <button type="button" id="addBooksBtn" class="btn-success">Add Book</button>
                 </div>
                 <hr>
                 <div class="col-sm-4 input">
                     <input id="rTitleInput" type="text" name="firstname" placeholder="Remove By title">
-                    <button type="button" id="removeTitle">Remove</button>
+                    <button type="button" id="removeTitle" class="btn-danger">Remove</button>
                 </div>
                 <div class="col-sm-4 input">
                     <input id="rAuthorInput" type="text" name="firstname" placeholder="Remove By Author">
-                    <button type="button" id="removeAuthor">Remove</button>
+                    <button type="button" id="removeAuthor" class="btn-danger">Remove</button>
                 </div>
             </div>
         </div>
@@ -78,11 +79,11 @@
             <div class="row">
                 <div class="col-sm-4 input">
                     <input type="text" name="firstname" placeholder="Get Book By Title" id="gTitle">
-                    <button type="button" id="getByTitle">Get</button>
+                    <button type="button" id="getByTitle" class="btn-success">Get</button>
                 </div>
                 <div class="col-sm-4 input">
                     <input type="text" name="firstname" placeholder="Get Books By Author" id="gAuthor">
-                    <button type="button" id="getByAuthor">Get</button>
+                    <button type="button" id="getByAuthor" class="btn-success">Get</button>
                 </div>
                 <div class="col-sm-4 input">
 
@@ -92,14 +93,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4 input">
-                    <button type="button" id="getRandomBook">Get Random Book</button>
+                    <button type="button" id="getRandomBook" class="btn-warning">Get Random Book</button>
                 </div>
                 <div class="col-sm-4 input">
 
-                    <button type="button" id="getAuthors">Get Authors</button>
+                    <button type="button" id="getAuthors" class="btn-warning">Get Authors</button>
                 </div>
                 <div class="col-sm-4 input">
-                    <button type="button" id="getRandomAuthor">Get Random Author</button>
+                    <button type="button" id="getRandomAuthor" class="btn-warning">Get Random Author</button>
                 </div>
             </div>
         </div>

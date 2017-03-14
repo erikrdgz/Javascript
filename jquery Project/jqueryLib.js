@@ -7,13 +7,12 @@ function newBook(title, author, numberOfPages, published) {
     //methods
     this.published = published;
 }
+var library = function () {};
 
 $(function () {
     window.glibrary = new library();
     window.glibrary.init();
 });
-
-var library = function () {}; //array
 
 library.prototype.init = function () {
     this.$Jumbo = $(".jumbotron ul");
@@ -95,7 +94,7 @@ library.prototype._getBooksByTitle = function () {
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (this.myBookArray[i].title.match(regex)) {
             this.$Well.empty();
-            this.$Well.append("<li>" + this.myBookArray[i].title + "</li>");
+            this.$Well.append("<li class='list-group-item'>" + "<span class ='badge'>Title</span>" + this.myBookArray[i].title + " By: " + this.myBookArray[i].author + "</li>");
         }
     }
 };
@@ -105,7 +104,7 @@ library.prototype._getBooksByAuthor = function () {
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (this.myBookArray[i].author.match(regex)) {
             this.$Well.empty();
-            this.$Well.append("<li>" + this.myBookArray[i].author + "</li>");
+            this.$Well.append("<li class='list-group-item'>" + "<span class ='badge'>Author</span>" + this.myBookArray[i].title + " By: " + this.myBookArray[i].author + "</li>");
 
         }
     }
@@ -116,7 +115,7 @@ library.prototype._getAuthors = function () {
     for (var i = 0; i < this.myBookArray.length; i++) {
         if (authors.indexOf(this.myBookArray[i].author) <= -1) {
             authors.push(this.myBookArray[i].author);
-            this.$Well.append("<li>" + this.myBookArray[i].author + "</li>");
+            this.$Well.append("<li class='list-group-item'>" + "<span class ='badge'>Author</span>" + this.myBookArray[i].author + "</li>");
 
         }
 
@@ -125,7 +124,7 @@ library.prototype._getAuthors = function () {
 };
 
 library.prototype._addMultiple = function () {
-    this.$addBooks.append("<li>" + "<input type='text' name='Title' class='input' placeholder='Title'><input type='text' name='Author' class='input' placeholder='Author'><input type='text' name='Pages' class='input' placeholder='Pages'><input type='text' name='Publish Year' class='input' placeholder='Publish Year'>" + "</li>")
+    this.$addBooks.append("<li class='list-group-item'>" + "<input type='text' name='Title' class='input' placeholder='Title'><input type='text' name='Author' class='input' placeholder='Author'><input type='text' name='Pages' class='input' placeholder='Number of Pages'><input type='text' name='Publish Year' class='input' placeholder='Published mm/dd/yy'>" + "</li>")
 }
 
 library.prototype._addBooks = function () {
@@ -141,7 +140,7 @@ library.prototype._addBooks = function () {
         }
         if (isUnique) {
             this.myBookArray.push(aAddedBooks[i]);
-            this.$Jumbo.append("<li class='list-group-item'>" + aAddedBooks[i].title + "</li>");
+            this.$Jumbo.append("<li class='list-group-item'>" + "<span class ='badge'>New</span>" + aAddedBooks[i].title + " By: " + aAddedBooks[i].author + "</li>");
         }
     }
     return false;
@@ -173,12 +172,12 @@ library.prototype._getAddBookValues2 = function () {
 library.prototype._getRandomBook = function () {
     this.$Well.empty();
     var randomBook = Math.floor(Math.random() * this.myBookArray.length);
-    this.$Well.append("<li>" + this.myBookArray[randomBook].title + "</li>") //MathRandom
+    this.$Well.append("<li class='list-group-item'>" + "<span class ='badge'>Random Book</span>" + this.myBookArray[randomBook].title + "</li>") //MathRandom
 };
 library.prototype._getRandomAuthorName = function () {
     this.$Well.empty();
     var randomAuthor = Math.floor(Math.random() * this.myBookArray.length);
-    this.$Well.append("<li>" + this.myBookArray[randomAuthor].author + "</li>") //MathRandom
+    this.$Well.append("<li class='list-group-item'>" + "<span class ='badge'>Random Author</span>" + this.myBookArray[randomAuthor].author + "</li>") //MathRandom
 };
 
 
