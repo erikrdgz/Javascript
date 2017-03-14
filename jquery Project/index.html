@@ -16,36 +16,60 @@
             <h1>JavaScript Library</h1>
         </div>
     </header>
-    <div class="container-fluid bg-info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 headName">
+                <h2>Library</h2>
+            </div>
+            <div class="col-xs-6 text-right headName">
+                <h2>Results</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-info display">
         <div class="row text-center">
-            <div class="col-xs-3">
+            <div class="col-xs-7 jumbotron">
+                <!-- Library Jumbo -->
+                <ul>
+                </ul>
+            </div>
+            <div class="col-xs-1">
                 <p></p>
             </div>
-            <div class="col-xs-6 jumbotron">
-                <p id="display">Display</p>
-            </div>
-            <div class="col-xs-3">
-                <p></p>
+            <div class="col-xs-4 well-lg">
+                <!-- Results well -->
+                <ul>
+
+                </ul>
             </div>
         </div>
     </div>
     <main>
         <div class="container-fluid">
             <div class="row">
-                <div class="input">
-                    <input type="text" name="firstname" class="input" placeholder="Title">
-                    <input type="text" name="firstname" class="input" placeholder="Author">
-                    <input type="text" name="firstname" class="input" placeholder="Pages">
-                    <input type="text" name="firstname" class="input" placeholder="Publish Year">
+                <!-- Single Add Book Reference
+                <div class="input" id="new-book-form">
+                    <input type="text" name="Title" class="input" placeholder="Title">
+                    <input type="text" name="Author" class="input" placeholder="Author">
+                    <input type="text" name="Pages" class="input" placeholder="Pages">
+                    <input type="text" name="Publish Year" class="input" placeholder="Publish Year">
                     <button type="submit" id="addBook">Add</button>
+                </div> -->
+                <hr>
+                <div class="addBooks" id="multiples">
+                    <h3>Add Books to Library</h3>
+                    <ul class="list-group">
+                    </ul>
+                    <button type="button" id="addBooks">Drop Down</button>
+                    <button type="button" id="addBooksBtn">Add Book</button>
                 </div>
                 <hr>
                 <div class="col-sm-4 input">
-                    <input type="text" name="firstname" placeholder="Remove By title">
+                    <input id="rTitleInput" type="text" name="firstname" placeholder="Remove By title">
                     <button type="button" id="removeTitle">Remove</button>
                 </div>
                 <div class="col-sm-4 input">
-                    <input type="text" name="firstname" placeholder="Remove By Author">
+                    <input id="rAuthorInput" type="text" name="firstname" placeholder="Remove By Author">
                     <button type="button" id="removeAuthor">Remove</button>
                 </div>
             </div>
@@ -53,32 +77,29 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4 input">
-                    <input type="text" name="firstname" placeholder="Get Random Book">
-                    <button type="button" id="getRandomBook">Get</button>
-                </div>
-                <div class="col-sm-4 input">
-                    <input type="text" name="firstname" placeholder="Get Book By Title">
+                    <input type="text" name="firstname" placeholder="Get Book By Title" id="gTitle">
                     <button type="button" id="getByTitle">Get</button>
                 </div>
                 <div class="col-sm-4 input">
-                    <input type="text" name="firstname" placeholder="Get Books By Author">
+                    <input type="text" name="firstname" placeholder="Get Books By Author" id="gAuthor">
                     <button type="button" id="getByAuthor">Get</button>
+                </div>
+                <div class="col-sm-4 input">
+
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4 input">
-                    <input type="text" name="firstname" placeholder="Add Books">
-                    <button type="button" id="addBooks">Add</button>
+                    <button type="button" id="getRandomBook">Get Random Book</button>
                 </div>
                 <div class="col-sm-4 input">
-                    <input type="text" name="firstname" placeholder="Get Authors">
-                    <button type="button" id="getAuthors">Get</button>
+
+                    <button type="button" id="getAuthors">Get Authors</button>
                 </div>
                 <div class="col-sm-4 input">
-                    <input type="text" name="firstname" placeholder="Get Random Author Name">
-                    <button type="button" id="getRandomAuthor">Get</button>
+                    <button type="button" id="getRandomAuthor">Get Random Author</button>
                 </div>
             </div>
         </div>
