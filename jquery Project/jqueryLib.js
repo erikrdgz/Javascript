@@ -1,10 +1,7 @@
 function newBook(title, author, numberOfPages, published) {
-    //properties
     this.title = title;
     this.author = author;
     this.numberOfPages = numberOfPages;
-    //events
-    //methods
     this.published = published;
 }
 var library = function () {};
@@ -18,7 +15,10 @@ library.prototype.init = function () {
     this.$Jumbo = $(".jumbotron ul");
     this.$Well = $(".well-lg ul");
     this.$addBooks = $(".addBooks ul");
-    this.myBookArray = new Array();
+    this.myBookArray = this.retrieve() || new Array();
+    if (this.myBookArray.length > 0) {
+        this.initInject();
+    }
     this._bindEvents();
 };
 
@@ -63,7 +63,6 @@ library.prototype._bindEvents = function () {
 //};
 
 library.prototype._removeBookByTitle = function () {
-
     var nArr = $(".jumbotron ul>li");
     var title = $("#rTitleInput").val();
     var bool = false;
@@ -74,18 +73,20 @@ library.prototype._removeBookByTitle = function () {
             this.myBookArray.splice(i, 1);
         }
     };
+    this.storeBooks();
 };
 
 library.prototype._removeBookByAuthor = function () {
     var nArr = $(".jumbotron ul>li");
     var author = $("#rAuthorInput").val();
-    var bool = false;
-    for (var i = 0; i < this.myBookArray.length; i++) {
-        if (this.myBookArray[i].author == author) {
+    var nBookArray = $.extend(true, [], this.myBookArray)
+    for (var i = 0; i < nBookArray.length; i++) {
+        if (nBookArray[i].author == author) {
             nArr[i].remove();
             this.myBookArray.splice(i, 1);
         }
     }
+    this.storeBooks();
 };
 
 library.prototype._getBooksByTitle = function () {
@@ -143,6 +144,7 @@ library.prototype._addBooks = function () {
             this.$Jumbo.append("<li class='list-group-item'>" + "<span class ='badge'>New</span>" + aAddedBooks[i].title + " By: " + aAddedBooks[i].author + "</li>");
         }
     }
+    this.storeBooks();
     return false;
 };
 //set myBookArray as a variable fr local storage
@@ -180,21 +182,24 @@ library.prototype._getRandomAuthorName = function () {
     this.$Well.append("<li class='list-group-item'>" + "<span class ='badge'>Random Author</span>" + this.myBookArray[randomAuthor].author + "</li>") //MathRandom
 };
 
+library.prototype.storeBooks = function () {
+    if (typeof (Storage) !== "undefined") {
+        localStorage["libArray"] = JSON.stringify(this.myBookArray);
+    } else {
+        return false;
+    }
+};
 
+library.prototype.retrieve = function () {
+    if (typeof (Storage) !== "undefined") {
+        return JSON.parse(localStorage.getItem("libArray"));
+    } else {
+        return false;
+    }
+};
 
-
-
-
-
-//$("#getRandomBook").on("click", function () {
-//    console.log($(this).text());
-//});
-//$("#addBooks").on("click", function () {
-//    console.log($(this).text());
-//});
-//$("#getAuthors").on("click", function () {
-//    console.log($(this).text());
-//});
-//$("#getRandomAuthor").on("click", function () {
-//    console.log($(this).text());
-//});
+library.prototype.initInject = function () {
+    for (var i = 0; i < this.myBookArray.length; i++) {
+        this.$Jumbo.append("<li class='list-group-item'>" + "<span class ='badge'>Title</span>" + this.myBookArray[i].title + " By: " + this.myBookArray[i].author + "</li>")
+    }
+}
